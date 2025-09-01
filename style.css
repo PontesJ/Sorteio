@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #47688f 0%, #275d7c 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+main {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.form-container {
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 1rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #468dcf;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.draw-btn, .copy-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #47688f 0%, #275d7c 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.draw-btn:hover, .copy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.draw-btn:active, .copy-btn:active {
+    transform: translateY(0);
+}
+
+.results-container {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid #e1e5e9;
+    text-align: center;
+}
+
+.results-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.numbers-display {
+    background: #f8f9fa;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #667eea;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.number-item {
+    background: linear-gradient(135deg, #47688f 0%, #275d7c 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
+}
+
+.copy-btn {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    margin-top: 10px;
+}
+
+.copy-btn:hover {
+    box-shadow: 0 10px 25px rgba(40, 167, 69, 0.3);
+}
+
+.copy-feedback {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.copy-feedback.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    opacity: 1;
+}
+
+.copy-feedback.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    opacity: 1;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    main {
+        padding: 25px;
+        border-radius: 15px;
+    }
+    
+    .input-group input {
+        padding: 12px;
+        font-size: 1rem;
+    }
+    
+    .draw-btn, .copy-btn {
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+    
+    .numbers-display {
+        padding: 20px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    .input-group input {
+        padding: 10px;
+    }
+    
+    .draw-btn, .copy-btn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+    
+    .numbers-display {
+        padding: 15px;
+        font-size: 1rem;
+    }
+    
+    .number-item {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
+
