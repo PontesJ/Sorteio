@@ -188,13 +188,25 @@ document.addEventListener('DOMContentLoaded', function() {
         copyFeedback.textContent = '';
     }
 
-    // Permitir sortear pressionando Enter nos inputs
-    [minNumberInput, maxNumberInput, quantityInput].forEach(input => {
-        input.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                drawNumbers();
-            }
-        });
+    // Permitir navegação com Enter entre os campos
+    minNumberInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            maxNumberInput.focus();
+        }
+    });
+
+    maxNumberInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            quantityInput.focus();
+        }
+    });
+
+    quantityInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            drawNumbers();
+        }
     });
 
     // Animação de carregamento no botão
